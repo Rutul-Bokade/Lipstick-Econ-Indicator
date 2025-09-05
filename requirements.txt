@@ -1,0 +1,10 @@
+pandas
+numpy
+pytrends
+yfinance
+statsmodels
+scikit-learn
+matplotlib
+vaderSentiment
+snscrape
+jupyterlab
