@@ -1,0 +1,11 @@
+import streamlit as st
+import pandas as pd
+from src.sentiment_analysis import analyze_sentiment
+
+st.title("💄 Lipstick Index 2.0 Dashboard")
+
+df = pd.read_csv("data/social_media.csv")
+df = analyze_sentiment(df)
+
+st.write("### Sample Social Media Sentiment")
+st.bar_chart(df["sentiment"])
