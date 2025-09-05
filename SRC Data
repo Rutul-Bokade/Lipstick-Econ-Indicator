@@ -1,0 +1,13 @@
+import pandas as pd
+
+def load_google_trends(path="data/google_trends.csv"):
+    return pd.read_csv(path)
+
+def load_social_media(path="data/social_media.csv"):
+    return pd.read_csv(path)
+
+def load_stock_prices(path="data/stock_prices.csv"):
+    return pd.read_csv(path)
+
+def load_macro_data(path="data/macro_data.csv"):
+    return pd.read_csv(path)
