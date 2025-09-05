@@ -1,0 +1,13 @@
+from sklearn.linear_model import LinearRegression
+import pandas as pd
+
+def build_regression(x, y):
+    model = LinearRegression()
+    model.fit(x, y)
+    return model
+
+def run_stock_sentiment_model(sentiment_df, stock_df):
+    X = sentiment_df[["sentiment"]].values
+    y = stock_df["stock_price"].values
+    model = build_regression(X, y)
+    return model
