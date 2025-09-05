@@ -1,0 +1,20 @@
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+def plot_trends_vs_gdp(trends_df, macro_df, output_path="outputs/figures/trends_vs_gdp.png"):
+    plt.figure(figsize=(8,5))
+    plt.plot(trends_df["date"], trends_df["search_interest"], label="Lipstick Searches")
+    plt.plot(macro_df["date"], macro_df["gdp_growth"], label="GDP Growth", linestyle="--")
+    plt.legend()
+    plt.title("Lipstick Search Interest vs GDP Growth")
+    plt.savefig(output_path, dpi=300)
+    plt.close()
+
+def plot_sentiment_vs_stock(sentiment_df, stock_df, output_path="outputs/figures/sentiment_vs_stock.png"):
+    plt.figure(figsize=(8,5))
+    plt.scatter(sentiment_df["sentiment"], stock_df["stock_price"])
+    plt.xlabel("Average Social Media Sentiment")
+    plt.ylabel("Beauty Stock Price")
+    plt.title("Sentiment vs Stock Price")
+    plt.savefig(output_path, dpi=300)
+    plt.close()
