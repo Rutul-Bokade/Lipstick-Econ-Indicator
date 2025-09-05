@@ -1,0 +1,25 @@
+import os
+from src.data_loader import load_google_trends, load_social_media, load_stock_prices, load_macro_data
+from src.sentiment_analysis import analyze_sentiment
+from src.visualization import plot_trends_vs_gdp, plot_sentiment_vs_stock
+from src.modeling import run_stock_sentiment_model
+
+os.makedirs("outputs/figures", exist_ok=True)
+
+# Load data
+google_trends = load_google_trends()
+social_media = load_social_media()
+stock_prices = load_stock_prices()
+macro_data = load_macro_data()
+
+# Sentiment analysis
+social_media = analyze_sentiment(social_media)
+
+# Visualizations
+plot_trends_vs_gdp(google_trends, macro_data)
+plot_sentiment_vs_stock(social_media, stock_prices)
+
+# Modeling
+model = run_stock_sentiment_model(social_media, stock_prices)
+print("Model Coefficient:", model.coef_)
+print("Model Intercept:", model.intercept_)
