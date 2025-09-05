@@ -1,0 +1,13 @@
+python -m pip install -r requirements.txt
+python run_pipeline.py
+
+cd lipstick-index-2.0
+git init
+git add .
+git commit -m "Initial commit - Lipstick Index 2.0 project"
+git branch -M main
+git remote add origin https://github.com/YOURNAME/lipstick-index-2.0.git
+git push -u origin main
+git add README.md
+git commit -m "Added recruiter-friendly README"
+git push
